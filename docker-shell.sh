@@ -4,8 +4,8 @@ set -e
 
 export BASE_DIR=$(pwd)
 export SECRETS_DIR=$(pwd)/../secrets/
-export GCS_BUCKET_NAME="mushroom-app-data-demo"
-export GCP_PROJECT="ac215-project"
+export GCS_BUCKET_NAME="ai5_nasa_ads_data"
+export GCP_PROJECT="secret-heaven-312408"
 export GCP_ZONE="us-central1-a"
 
 # Create the network if we don't have it yet
@@ -18,8 +18,8 @@ docker build -t data-version-cli -f Dockerfile .
 docker run --rm --name data-version-cli -ti \
 -v "$BASE_DIR":/app \
 -v "$SECRETS_DIR":/secrets \
--v ~/.gitconfig:/etc/gitconfig \
--e GOOGLE_APPLICATION_CREDENTIALS=/secrets/data-service-account.json \
+-v ~/.gitconfig:/etc/.gitconfig \
+-e GOOGLE_APPLICATION_CREDENTIALS=/secrets/secret-heaven-312408-d2eb79bdeadd.json \
 -e GCP_PROJECT=$GCP_PROJECT \
 -e GCP_ZONE=$GCP_ZONE \
 -e GCS_BUCKET_NAME=$GCS_BUCKET_NAME \

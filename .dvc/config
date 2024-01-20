@@ -1,0 +1,6 @@
+[core]
+    remote = ads-data
+['remote "mushroom_dataset"']
+    url = gs://ai5_nasa_ads_data/dvc_store
+['remote "ads-data"']
+    url = gs://ai5_nasa_ads_data/dvc_store
